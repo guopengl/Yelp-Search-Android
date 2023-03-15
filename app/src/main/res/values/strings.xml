@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Yelp</string>
+    <string name="keyword_hint">KeyWord <font color='#FF0000'>*</font></string>
+    <string name="distance_hint">Distance</string>
+    <string name="category_asterisk"><font color='#b100c5'>Category</font> <font color='#FF0000'>*</font></string>
+    <string-array name="category_options">
+        <item>Default</item>
+        <item>Arts and Entertainment</item>
+        <item>Health and Medical</item>
+        <item>Hotel and Travel</item>
+        <item>Food</item>
+        <item>Professional Services</item>
+    </string-array>
+    <string name="location_hint">Location <font color='#FF0000'>*</font></string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="business_link"><font color='#FF03DAC5'><u>Business Link</u></font></string>
+</resources>

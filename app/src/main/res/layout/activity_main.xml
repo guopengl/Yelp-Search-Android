@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.MainActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:background="@color/red">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:text="Yelp"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                app:icon="@drawable/reservation"
+                app:iconSize="25dp"
+                app:iconGravity="start"
+                app:iconTint="@color/deep_grey"
+                android:onClick="openBookings" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Business Search"
+                android:textSize="30sp" />
+
+            <AutoCompleteTextView
+                android:id="@+id/atv_keyword"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:completionThreshold="1"
+                android:hint="@string/keyword_hint"
+                android:minHeight="48dp" />
+
+
+            <EditText
+                android:id="@+id/et_distance"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@string/distance_hint"
+                android:minHeight="48dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/category_asterisk"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/spinner_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/category_options"
+                android:minHeight="48dp"
+                android:spinnerMode="dropdown"/>
+
+            <EditText
+                android:id="@+id/et_location"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/location_hint"
+                android:minHeight="48dp" />
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:text="Auto-detect my location"
+                android:textSize="15sp"
+                android:buttonTint="@color/purple"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="60dp"
+                    android:layout_alignParentLeft="true"
+                    android:onClick="submit"
+                    android:text="SUBMIT" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="60dp"
+                    android:layout_alignParentRight="true"
+                    android:onClick="clear"
+                    android:text="CLEAR" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Results"
+                android:textSize="30sp" />
+
+            <ScrollView
+                android:id="@+id/sv_business_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <com.example.testapplication.view.MyListView
+                    android:id="@+id/business_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@color/black"
+                    android:dividerHeight="2dp"/>
+
+            </ScrollView>
+            <TextView
+                android:id="@+id/tv_no_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:layout_gravity="center_horizontal"
+                android:text="No results available"
+                android:textSize="25sp"
+                android:textColor="@color/red"
+                android:visibility="gone"/>
+
+            <ProgressBar
+                android:id="@+id/pb_business_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/pb_auto_complete"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:layout_marginLeft="10dp"
+        android:elevation="5dp"
+        android:background="@drawable/border_no_corner_radius"
+        android:visibility="gone" />
+</FrameLayout>
+
+
+
